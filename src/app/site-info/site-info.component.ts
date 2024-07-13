@@ -48,6 +48,8 @@ export class SiteInfoComponent implements OnInit {
   items: MenuItem[] =[];
   activeItem!: MenuItem;
   sidebarVisible: boolean = true;
+  activeTabIndex: number = 0;
+
 
   siteInfoForm =  new FormGroup({
   siteId: new FormControl({value: '', disabled: true}),
@@ -120,9 +122,16 @@ export class SiteInfoComponent implements OnInit {
   }
 
   onUpload(event: UploadEvent) {
-    alert("File upload event triggered");
+    this.toastr.info("File Uploaded succefully","Info")
+}
+onError(event:any){  
+  this.toastr.error(event.error.body.error,"Error!")
+}
 
-    console.log("hello",event);
-    this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
+
+onTabChange(event:any) {
+  this.activeTabIndex = event.index;
+  console.log(this.activeTabIndex);
+  
 }
 }

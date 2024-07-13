@@ -19,7 +19,18 @@ export class SiteDataService implements InMemoryDbService {
         {site_id:"1725", region:"Giza",option:"C",site_type:"Roof Top", structure_type:"RT Poles", map:"", structure_height:"10"},
         {site_id:"1726", region:"Giza",option:"C",site_type:"Roof Top", structure_type:"RT Poles", map:"", structure_height:"10"}
       ]
-     return {sites};
+      const files = [
+        {
+          lastModified: 1720895044448,
+          lastModifiedDate: "Sat Jul 13 2024 21:24:04 GMT+0300 (Eastern European Summer Time)" ,
+          name: "new.xlsx",
+          size: 6646,
+          type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          webkitRelativePath: "",
+          id:1
+        }
+      ]
+     return {sites, files};
   }
 
   post(reqInfo: RequestInfo) {    

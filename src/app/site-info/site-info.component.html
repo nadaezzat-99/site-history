@@ -53,7 +53,7 @@
             </div>
             <div class="d-flex flex-column h-100">
                 <!-- Search Part -->
-                <div class="d-flex  justify-content-around">
+                <div class="d-flex  justify-content-around" *ngIf="activeTabIndex === 0">
                     <div class="my-2 my-lg-0 w-25 d-flex align-items-center justify-content-center">
                         <input class="form-control mr-sm-2 mx-2" required type="text" placeholder="Site Id" aria-label="Search" [(ngModel)]="search" (keyup.enter)="getSiteData()">
                         <button class="btn btn-light my-2 my-sm-0" (click)="getSiteData()" [disabled]="search.trim().length ? false : true ">Search</button>
@@ -61,8 +61,8 @@
                 </div>
                 <!-- TabView with PrimeNG -->
                 <div class="h-100 ">
-                    <p-tabView>
-                        <p-tabPanel header="Site Info" class="container-fluid ">
+                    <p-tabView  (onChange)="onTabChange($event)" >
+                        <p-tabPanel header="Site Info" class="container-fluid " >
                             <!-- Site Info Form -->
                                 <div class=" d-flex flex-row w-100 justify-content-around ">
                                 <form [formGroup]="siteInfoForm" class="form-group text-center w-75 mr-4 mt-8">
@@ -116,10 +116,10 @@
                                         chooseLabel="Upload file" 
                                         chooseIcon="pi pi-upload"
                                         name="demo[]" 
-                                        url="https://www.primefaces.org/cdn/api/upload.php" 
+                                        url="api/files/" 
                                         accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
                                         (onUpload)="onUpload($event)"
-                                        (onError)="onUpload($event)"
+                                        (onError)="onError($event)"
                                         class="w-100">
                                     </p-fileUpload>
                                 </div>

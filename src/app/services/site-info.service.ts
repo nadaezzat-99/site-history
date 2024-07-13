@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class SiteInfoService {
   
-  private sitesUrl = 'api/sites/';
   constructor(private http:HttpClient) { 
   }
 
