@@ -11,6 +11,28 @@ body{
     overflow: hidden;
 }
 
+
+.upload-btn{
+    /* border: solid rgb(205, 49, 49) 1px;
+     padding: 5px ;
+      border-radius: 5px; */
+
+      border: solid rgb(205, 49, 49) 1px;
+      padding: 5px ;
+      border-radius: 5px;
+      background-color: rgb(205, 49, 49) ;
+      color: white;
+}
+
+
+.upload-btn :hover{
+      border: solid rgb(205, 49, 49) 1px;
+      /* padding: 5px ; */
+      border-radius: 5px;
+      background-color: rgb(205, 49, 49) ;
+      color: white;
+}
+
 /* 
 .card {
     background: var(--surface-card);

@@ -62,7 +62,7 @@
                 <!-- TabView with PrimeNG -->
                 <div class="h-100 ">
                     <p-tabView  (onChange)="onTabChange($event)" >
-                        <p-tabPanel header="Site Info" class="container-fluid " >
+                        <p-tabPanel header="Site Info" class="container-fluid ">
                             <!-- Site Info Form -->
                                 <div class=" d-flex flex-row w-100 justify-content-around ">
                                 <form [formGroup]="siteInfoForm" class="form-group text-center w-75 mr-4 mt-8">
@@ -106,21 +106,24 @@
                             </div>
                         </p-tabPanel>
                         <!-- Second TabPanel for Site Update -->
-                        <p-tabPanel header="Site Update">
-                            <div class="w-25 d-flex background-color flex-row align-items-center justify-content-center mt-5 text-center">
-                                <div class="p-5">
+                        <p-tabPanel header="Site Update " class="d-flex justify-content-center w-100  ">
+                            <div class=" card d-flex flex-row align-items-center justify-content-center p-6" style="margin-top: 110px;">
+                                <div class="mt-5 mr-2">
+                                    <h6> Upload file with the new site data update</h6>
+                                </div>
+                                <div class="mt-6 upload-btn">
                                     <!-- Choose Button -->
                                      <p-toast></p-toast>
-                                    <p-fileUpload 
+                                    <p-fileUpload  
                                         mode="basic" 
-                                        chooseLabel="Upload file" 
+                                        chooseLabel="Browse file" 
                                         chooseIcon="pi pi-upload"
                                         name="demo[]" 
                                         url="api/files/" 
                                         accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
                                         (onUpload)="onUpload($event)"
                                         (onError)="onError($event)"
-                                        class="w-100">
+                                        >
                                     </p-fileUpload>
                                 </div>
                             </div>
