@@ -115,13 +115,14 @@ export class SiteInfoComponent implements OnInit {
           this.siteData.map = ""
         },
         complete: () => this.isLoading = false
-
     });     
     }
   }
 
-
   onUpload(event: UploadEvent) {
+    alert("File upload event triggered");
+
+    console.log("hello",event);
     this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
 }
 }
